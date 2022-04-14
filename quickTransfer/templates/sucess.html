@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/471c9fece7.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: rgb(49, 111, 244);
+}
+.container{
+    width: 50%;
+    height: 100px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+#newtask{
+    width:90%;
+    margin-top: 30px;
+    margin-left:5%
+
+}
+#newtask input{
+    width: 100%;
+    height: 45px;
+    padding: 12px;
+    margin-top: 10px;
+    border-width: 100px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+    outline: none;
+}
+
+#newtask input:hover{
+    outline: none;
+    border-color: #0d75ec;
+}
+.btn {
+    margin:0 auto;
+    display:block;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    outline: none;
+    width: 20%;
+    height: 45px;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+}
+.btn:hover {
+    background-color: #aeb4ba;
+}
+input { 
+    text-align: center; 
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.copyLink:hover {
+    cursor: pointer;
+    color:#0d75ec;
+}
+.copyLink:active {
+    color: rgb(24, 168, 26);
+}
+.buttonAA:hover {
+    background-color: #0a84e1;
+}
+    </style>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <h1 style="text-align: center; font-size: 60px; color: white;">Upload Complete!</h1>
+    <h1 style="text-align: center; color: white;">Your code is:</h1>
+    <div class="container">
+        <div id="newtask">
+            <input type="text" class="textarea" value={{ fileid123 }} readonly>
+            <p style="text-align: center;" onclick="copyEvent('copy')" class="copyLink" id="copyButton">Click to copy share link</p>
+            <p style="font-size: 0.5px;" id="copy">127.0.0.1:5000/download/{{ fileid123 }}</p>
+        </div>
+    </div>
+        <a href="/"><button class="btn"style="margin: auto;">Back</button></a>
+    <script>
+        function copyEvent(id)
+        {
+            var str = document.getElementById(id);
+            window.getSelection().selectAllChildren(str);
+            document.execCommand("Copy")
+        }
+        const btn = document.getElementById('copyButton');
+btn.addEventListener('click', function handleClick() {
+  btn.textContent = 'Copied Share Link!';
+});
+    </script>
+</html>
